@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk to Harshit - WebArclight</title>
+    <title>Call Harshit - WebArclight AI</title>
     <style>
+        /* Modern WebArclight Theme */
         body {
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Professional Dark Teal */
             height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            font-family: 'Segoe UI', sans-serif;
             color: white;
             text-align: center;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
+
+        .card {
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism Effect */
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             border: 1px solid rgba(255, 255, 255, 0.18);
             max-width: 400px;
             width: 90%;
+            transition: transform 0.3s ease;
         }
-        h1 { margin-bottom: 10px; font-size: 24px; }
-        p { margin-bottom: 30px; font-size: 16px; opacity: 0.9; }
-        
-        /* Pulse Animation for attention */
-        .pulse-text {
-            animation: pulse 2s infinite;
+
+        .card:hover {
+            transform: translateY(-5px);
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Custom Button Styling */
+        #omni-open-widget-btn {
+            background: #00d2ff;  /* WebArclight Cyan/Blue */
+            background: linear-gradient(to right, #3a7bd5, #00d2ff); 
+            border: none;
+            padding: 15px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #omni-open-widget-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+        }
+
+        #omni-open-widget-btn:active {
+            transform: scale(0.98);
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #00ff88;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>📞 Call Harshit</h1>
-        <p>WebArclight's AI Growth Associate</p>
-        <p class="pulse-text">👇 Click the widget below to start talking</p>
+    <div class="card">
+        <div style="margin-bottom: 20px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Icon" width="80">
+        </div>
+        
+        <h1>Talk to Harshit</h1>
+        <p>WebArclight's Senior AI Growth Associate.<br>
+        <span style="font-size: 14px; opacity: 0.8;">Discuss Revenue & Digital Strategy (English/Hindi)</span></p>
+
+        <button id="omni-open-widget-btn">
+            <span class="status-dot"></span>
+            Start Call Now
+        </button>
     </div>
 
     <script 
