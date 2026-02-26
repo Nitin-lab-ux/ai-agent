@@ -3,28 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebArclight AI Agent - Harshit</title>
+    <title>Talk to Harshit - WebArclight</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
         }
-        h1 { color: #333; }
-        p { color: #666; }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { margin-bottom: 10px; font-size: 24px; }
+        p { margin-bottom: 30px; font-size: 16px; opacity: 0.9; }
+        
+        /* Pulse Animation for attention */
+        .pulse-text {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
 
-    <h1>WebArclight Intelligent Support</h1>
-    <p>Talk to Harshit, our AI Growth Associate.</p>
+    <div class="container">
+        <h1>📞 Call Harshit</h1>
+        <p>WebArclight's AI Growth Associate</p>
+        <p class="pulse-text">👇 Click the widget below to start talking</p>
+    </div>
 
-    <script id="omnidimension-web-widget" async src="https://omnidim.io/web_widget.js?secret_key=2e671a05a7d453f9079864dd8e25393f"></script>
+    <script 
+        id="omnidimension-web-widget" 
+        async 
+        src="https://omnidim.io/web_widget.js?secret_key=2e671a05a7d453f9079864dd8e25393f">
+    </script>
 
 </body>
 </html>
