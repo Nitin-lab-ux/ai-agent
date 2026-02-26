@@ -3,66 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit AI - WebArclight</title>
+    <title>Call Harshit - WebArclight AI</title>
     <style>
-        /* Professional Dark Theme */
+        /* Professional Dark Background */
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: radial-gradient(circle at center, #1e293b, #0f172a);
             font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, #0f172a, #000000);
+            height: 100vh;
+            margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             color: white;
+            flex-direction: column;
         }
 
-        /* Header Styling */
-        .header {
+        /* Card Container */
+        .card {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        h1 { margin: 0; font-size: 24px; letter-spacing: 1px; }
-        p { color: #94a3b8; font-size: 14px; margin-top: 5px; }
-
-        /* Widget Container Box */
-        .agent-box {
-            width: 90%;           /* Mobile friendly */
-            max-width: 450px;     /* Desktop limit */
-            height: 600px;        /* Height fix */
             background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            overflow: hidden;     /* Widget ko round corners mein rakhega */
-            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            max-width: 400px;
+            width: 90%;
         }
 
-        /* Loading Text (Agar widget load hone mein time le) */
-        .loading-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #64748b;
-            font-size: 12px;
-            z-index: -1;
+        h1 { margin: 0 0 10px 0; font-size: 28px; }
+        p { color: #94a3b8; margin-bottom: 30px; line-height: 1.6; }
+
+        /* --- TUMHARA CUSTOM BUTTON STYLE --- */
+        #omni-open-widget-btn {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8); /* WebArclight Blue */
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #omni-open-widget-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.6);
+        }
+
+        #omni-open-widget-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Pulsing Dot Animation */
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #4ade80; /* Green */
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>WebArclight AI</h1>
-        <p>Connecting to Harshit (Growth Associate)...</p>
-    </div>
+    <div class="card">
+        <div style="font-size: 50px; margin-bottom: 20px;">🤖</div>
 
-    <div class="agent-box">
-        <div class="loading-text">Loading Interface...</div>
-        
-        <div id="omni-widget-component" style="width: 100%; height: 100%;"></div>
+        <h1>Talk to Harshit</h1>
+        <p>
+            Connect with WebArclight's AI Growth Associate.<br>
+            <span style="font-size: 14px; opacity: 0.7;">Discuss Revenue & Strategy (English/Hindi)</span>
+        </p>
+
+        <button id="omni-open-widget-btn">
+            <span class="live-dot"></span>
+            Start Call Now
+        </button>
     </div>
 
     <script 
